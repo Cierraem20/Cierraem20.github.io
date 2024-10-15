@@ -1,4 +1,5 @@
-* {
+
+  * {
     box-sizing: border-box;
   }
 
@@ -18,14 +19,6 @@ li{
     color: #5F464B;
   }
   
-.gallery img {
-    width:100%;
-    max-width:350px;
-    height: 350px;
-    border-radius: 10px;
-    border: 3px solid #051014;
-    padding: 1px;
-}
 
 
 .header h1{
@@ -38,26 +31,46 @@ li{
     border-bottom: 4px solid #F4F0BB;
   }
 
-body{
+  body{
     margin:0;
 }
 
-.gallery{
-    display: flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-    justify-content: center;
-    padding: 20px 10px;
-    margin: 0 auto;
-    gap:5px;
+img{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+    padding: 5px;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,.2);
+    box-sizing: border-box;
 }
 
-.gallery::after{
-    content:"";
-    width:350px;
-  }
+.gallery{
+    column-count: 3;
+    column-gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #487e54;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,.25);
+}
 
-  #realestate .gallery::after{
-    content:"";
-    width:1000px;
-  }
+@media screen and (max-width:1024px){
+    .gallery{
+        column-count: 3;
+    }
+}
+
+@media screen and (max-width:640px){
+    .gallery{
+        column-count: 2;
+    }
+}
+
+@media screen and (max-width:375px){
+    .gallery{
+        column-count: 1;
+    }
+}
+
